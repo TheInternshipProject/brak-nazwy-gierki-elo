@@ -1,0 +1,5 @@
+[Character Settings]
+Speed=10;
+Jump Power=17;
+Ground  Layer= Ground;
+Wall Layer=Wall;

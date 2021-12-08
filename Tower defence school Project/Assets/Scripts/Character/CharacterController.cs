@@ -23,12 +23,12 @@ public class CharacterController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         horizontalInput = Input.GetAxis("Horizontal");
 
         if (horizontalInput > 0.01f)
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(1, 1, 1);
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-1, 1, 1);
 

@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
 
     private Animator anim;
 
+    public GameObject PlayerDeadMenu;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -23,7 +25,13 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             anim.SetTrigger("hurt");
+
             //StartCoroutine(Invunerability());
+            Time.timeScale = 1f;
+            PlayerDeadMenu.SetActive(false);
+            GameObject.Find("UiCanvas").GetComponent<PauseMenu>().enabled = true;
+            GameObject.Find("Player").GetComponent<CharacterAttack>().enabled = true;
+            GameObject.Find("Player").GetComponent<Dash>().enabled = true;
         }
         else 
         {
@@ -33,7 +41,13 @@ public class Health : MonoBehaviour
                 GetComponent<CharacterController>().enabled = false;
                 dead = true;
 
-                GetComponent<MeleeAttack>().enabled = false;
+                Time.timeScale = 0f;
+                PlayerDeadMenu.SetActive(true);
+
+                GameObject.Find("UiCanvas").GetComponent<PauseMenu>().enabled = false;
+
+                GameObject.Find("Player").GetComponent<CharacterAttack>().enabled = false;
+                GameObject.Find("Player").GetComponent<Dash>().enabled = false;
             }
 
         }

@@ -1,6 +1,6 @@
 SUPER GIERKA ELO
 
-STEROWANIE: 
-1 - Fireball
-2- Dash
-Lewy przycisk myszy - miecz
+STEROWANIE: <br>
+1 - Fireball <br>
+2- Dash <br>
+Lewy przycisk myszy - miecz <br>

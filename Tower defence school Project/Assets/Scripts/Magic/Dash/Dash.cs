@@ -25,7 +25,8 @@ public class Dash : MonoBehaviour
         }
 
    //You can change KeyCode to whatever you like. currently on the NUMPAD 0 "zero" button
-        if (Input.GetKey(KeyCode.Alpha2)) {
+        if (Input.GetKey(KeyCode.LeftShift)|| Input.GetKey(KeyCode.RightShift))
+        {
             if (dashCooldown <= 0) {
                 StartCoroutine(DashPower());
     }

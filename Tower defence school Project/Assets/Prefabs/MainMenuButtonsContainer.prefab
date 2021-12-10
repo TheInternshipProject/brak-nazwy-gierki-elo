@@ -156,7 +156,6 @@ GameObject:
   - component: {fileID: 2905458494177299823}
   - component: {fileID: 3677778479077189777}
   - component: {fileID: 8160471372547575925}
-  - component: {fileID: 2905458493520780048}
   m_Layer: 5
   m_Name: MainMenuButtonsContainer
   m_TagString: Untagged
@@ -215,18 +214,6 @@ MonoBehaviour:
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
 --- !u!114 &8160471372547575925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905458493520780051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1634daf3cf75ee458ef1ceff4621839, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2905458493520780048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

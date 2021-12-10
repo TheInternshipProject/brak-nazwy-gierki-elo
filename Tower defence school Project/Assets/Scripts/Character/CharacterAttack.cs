@@ -25,7 +25,7 @@ public class CharacterAttack : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Alpha1) && cooldownTimer > attackCooldown )
+        if(Input.GetMouseButton(1) && cooldownTimer > attackCooldown )
         {
             Attack();
         }

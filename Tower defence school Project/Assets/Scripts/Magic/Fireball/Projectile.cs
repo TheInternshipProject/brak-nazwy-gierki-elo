@@ -8,6 +8,9 @@ public class Projectile : MonoBehaviour
     private float direction;
     private bool hit;
     private float lifetime;
+    private float timer = 0;
+ 
+    private float timerMax = 5;
 
     private BoxCollider2D boxCollider;
     private Animator anim;
@@ -24,7 +27,11 @@ public class Projectile : MonoBehaviour
         transform.Translate(movementSpeed , 0 , 0);
 
         lifetime += Time.deltaTime;
-        if(lifetime > 5) gameObject.SetActive(false);
+        if(lifetime > 5){
+            anim.SetTrigger("explode");
+            if(lifetime > 7)
+                gameObject.SetActive(false);
+        } 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -55,5 +62,18 @@ public class Projectile : MonoBehaviour
     private void Deactivate()
     {
         gameObject.SetActive(false);
+    }
+
+    public bool Delay(float seconds)
+    {
+            timerMax = seconds;
+            timer += Time.deltaTime;
+        
+            if (timer >= timerMax)
+            {
+                return true; //max reached - waited x - seconds
+            }
+        
+            return false;
     }
 }

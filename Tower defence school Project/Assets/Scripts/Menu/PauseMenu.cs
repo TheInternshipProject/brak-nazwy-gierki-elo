@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-
+    public static PauseMenu instance { get; private set;}
     public static bool GameIsPaused = false;
+    [SerializeField] private AudioClip MainMenuMusic;
+    [SerializeField] public GameObject pauseMenuUI;
 
-    public GameObject pauseMenuUI;
+    private void Awake(){
+        instance = this;
+    }
 
     void Update()
     {
@@ -36,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+       // SoundManager.instance.PlaySound(MainMenuMusic);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;

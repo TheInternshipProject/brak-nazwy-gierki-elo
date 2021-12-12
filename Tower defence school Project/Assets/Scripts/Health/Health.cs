@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
             if(!dead && getObjectTag() != "Enemy")
             {
                 anim.SetTrigger("die");
-              //  GetComponent<CharacterController>().enabled = false;
+                GameObject.Find("Player").GetComponent<CharacterController>().enabled = false;
                 dead = true;
 
 
@@ -62,6 +62,7 @@ public class Health : MonoBehaviour
             }
             else if(getObjectTag() == "Enemy"){
                 anim.SetTrigger("die");
+                // GameObject.Find("EnemyBot").GetComponent<MeleeEnemy>().enabled = false;
                 dead =true;
             }
 

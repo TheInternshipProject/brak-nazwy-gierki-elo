@@ -9,7 +9,7 @@ public class MusicHandler : MonoBehaviour
     public void Update(){
         if(PauseMenu.GameIsPaused)
         {
-            SoundManager.instance.LowerVolume(0.1f);
+            SoundManager.instance.LowerVolume(0.05f);
            SoundManager.instance.PlaySound(MainMenuMusic);
         }
         else SoundManager.instance.Stop();

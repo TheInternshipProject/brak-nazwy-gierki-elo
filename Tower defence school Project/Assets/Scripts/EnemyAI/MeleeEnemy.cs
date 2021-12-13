@@ -10,6 +10,8 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private GameObject Sword;
+    [SerializeField] private Transform AttackPoint;
     private float cooldownTimer = Mathf.Infinity;
 
     private Animator anim;
@@ -29,9 +31,17 @@ public class MeleeEnemy : MonoBehaviour
             {
                 cooldownTimer =0;
                 anim.SetTrigger("meleeAttack");
+                MeleeSwordAttack();
             }
         }
         
+    }
+
+    private void MeleeSwordAttack()
+    {
+        cooldownTimer = 0;
+        Sword.transform.position = AttackPoint.position;
+        Sword.GetComponent<MeleeAtackEnemy>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
     private bool PlayerInSight()

@@ -39,7 +39,10 @@ public class ProjectileForcePush : MonoBehaviour
 
         if(collision.tag == "Enemy"){
             gameObject.SetActive(false);
-            Vector3 temp = new Vector3(1.0f,0,0);
+            Vector3 temp;
+            if (collision.transform.rotation.y <= 0)
+                temp = new Vector3(1.0f, 0, 0);
+            else temp = new Vector3(-1.0f, 0, 0);
 
             collision.transform.position += temp;
             collision.GetComponent<Health>().TakeDamage(1);

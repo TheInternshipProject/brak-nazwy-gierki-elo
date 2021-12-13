@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField] private HealthBarEnemy healthBar;
     public float currentHealth {get; private set; }
     private bool dead =false;
+    public static bool isPlayerDead = false;
     private float timer = 0;
     public GameObject HitPoints;
  
@@ -19,6 +20,7 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
+        isPlayerDead = false;
         anim = GetComponent<Animator>();
         currentHealth = startingHealth;
     }
@@ -58,7 +60,7 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
                 GameObject.Find("Player").GetComponent<CharacterController>().enabled = false;
                 dead = true;
-
+                isPlayerDead = true;
 
                 Time.timeScale = 0.6f;
                 PlayerDeadMenu.SetActive(true);

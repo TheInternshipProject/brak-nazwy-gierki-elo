@@ -2492,6 +2492,70 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_text
+      value: STATS
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_characterSpacing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.b
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.g
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.r
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.topRight.b
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.topRight.g
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.topRight.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.b
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.g
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.r
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.b
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.g
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628460326421718494, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
     - target: {fileID: 2905458493520780051, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
       propertyPath: m_Name
       value: MainMenuButtonsContainer
@@ -2797,6 +2861,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6078403545326185579, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515301093630056319, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515301093630056319, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515301093630056319, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515301093630056319, guid: 6b43a9c3c2a0bc74193ef9191c6b168f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

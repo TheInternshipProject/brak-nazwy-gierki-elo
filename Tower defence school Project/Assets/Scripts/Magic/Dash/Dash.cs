@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Dash : MonoBehaviour
 {
+    [SerializeField] private Stamina stamina;
      // how fast you want to dash
     public float dashSpeed;
     // how long you want to dash for
@@ -12,6 +13,7 @@ public class Dash : MonoBehaviour
     private float dashCooldown;
     // resets the cooldown to specified time. higher numbers = longer CD
     public float resetDashCooldown;
+
 
     public void Update()
     {
@@ -49,7 +51,8 @@ public class Dash : MonoBehaviour
             }
 
             dashCooldown = resetDashCooldown;
- 
+            stamina.SetStaminaToZero();
+            stamina.SlowlyRecoverStamina(resetDashCooldown);
             yield return null;
         }
 

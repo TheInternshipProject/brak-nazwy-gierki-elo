@@ -9,6 +9,7 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] private Transform AttackPoint;
     [SerializeField] private GameObject Sword;
     [SerializeField] private GameObject[] fireballs;
+    [SerializeField] private GameObject[] ForcePushes;
     Dash dash;
 
     private Animator anim;
@@ -27,7 +28,12 @@ public class CharacterAttack : MonoBehaviour
     {
         if(Input.GetMouseButton(1) && cooldownTimer > attackCooldown )
         {
-            Attack();
+            FireballAtack();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q) && cooldownTimer > attackCooldown )
+        {
+            ForcePushAttack();
         }
 
         if(Input.GetMouseButton(0) && cooldownTimer > attackCooldown )
@@ -40,12 +46,13 @@ public class CharacterAttack : MonoBehaviour
 
     private void MeleeSwordAttack()
     {
+         anim.SetTrigger("attack");
         cooldownTimer = 0;
         Sword.transform.position = AttackPoint.position;
         Sword.GetComponent<MeleeAttack>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
-    private void Attack() 
+    private void FireballAtack() 
     {
         anim.SetTrigger("attack");
         cooldownTimer = 0;
@@ -54,11 +61,30 @@ public class CharacterAttack : MonoBehaviour
         fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
+    private void ForcePushAttack() 
+    {
+        anim.SetTrigger("attack");
+        cooldownTimer = 0;
+
+        ForcePushes[FindForcePush()].transform.position = FirePoint.position;
+        ForcePushes[FindForcePush()].GetComponent<ProjectileForcePush>().SetDirection(Mathf.Sign(transform.localScale.x));
+    }
+
     private int FindFireball()
     {
         for(int i = 0 ;i <fireballs.Length ; i++)
         {
             if(!fireballs[i].activeInHierarchy)
+                return i;
+        }
+        return 0;
+    }
+
+     private int FindForcePush()
+    {
+        for(int i = 0 ;i <ForcePushes.Length ; i++)
+        {
+            if(!ForcePushes[i].activeInHierarchy)
                 return i;
         }
         return 0;

@@ -8,7 +8,8 @@ public class Health : MonoBehaviour
     [SerializeField] private HealthBarEnemy healthBar;
     public float currentHealth {get; private set; }
     private bool dead =false;
-     private float timer = 0;
+    private float timer = 0;
+    public GameObject HitPoints;
  
     private float timerMax = 5;
 
@@ -29,11 +30,18 @@ public class Health : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage , 0 , startingHealth);
+        //DamagePopup.Create(gameObject.transform.position ,(int)_damage , true);
 
-        if(getObjectTag() == "Enemy")  healthBar.SetHealth(currentHealth , startingHealth);
-
+        if (getObjectTag() == "Enemy")
+        {
+            healthBar.SetHealth(currentHealth, startingHealth);
+            GameObject points = Instantiate(HitPoints, transform.position, Quaternion.identity);
+            points.transform.GetChild(0).GetComponent<TextMesh>().text = _damage.ToString();
+        }
         if (currentHealth > 0 && !dead)
         {
+            GameObject points = Instantiate(HitPoints, transform.position, Quaternion.identity);
+            points.transform.GetChild(0).GetComponent<TextMesh>().text = _damage.ToString();
             anim.SetTrigger("hurt");
 
             //StartCoroutine(Invunerability());
@@ -48,7 +56,7 @@ public class Health : MonoBehaviour
             if(!dead && getObjectTag() != "Enemy")
             {
                 anim.SetTrigger("die");
-              //  GetComponent<CharacterController>().enabled = false;
+                GameObject.Find("Player").GetComponent<CharacterController>().enabled = false;
                 dead = true;
 
 
@@ -62,6 +70,7 @@ public class Health : MonoBehaviour
             }
             else if(getObjectTag() == "Enemy"){
                 anim.SetTrigger("die");
+                // GameObject.Find("EnemyBot").GetComponent<MeleeEnemy>().enabled = false;
                 dead =true;
             }
 

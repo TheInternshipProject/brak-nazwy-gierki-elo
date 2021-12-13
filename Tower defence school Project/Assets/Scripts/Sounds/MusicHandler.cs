@@ -7,7 +7,7 @@ public class MusicHandler : MonoBehaviour
     [SerializeField] private AudioClip MainMenuMusic;
    
     public void Update(){
-        if(PauseMenu.GameIsPaused)
+        if(MainMenu.isMenuOpened)
         {
             SoundManager.instance.LowerVolume(0.05f);
            SoundManager.instance.PlaySound(MainMenuMusic);

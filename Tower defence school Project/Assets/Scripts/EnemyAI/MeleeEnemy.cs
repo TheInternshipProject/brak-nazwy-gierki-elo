@@ -12,6 +12,8 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private GameObject Sword;
     [SerializeField] private Transform AttackPoint;
+
+    [SerializeField] private Transform player;
     private float cooldownTimer = Mathf.Infinity;
 
     private Animator anim;
@@ -24,9 +26,13 @@ public class MeleeEnemy : MonoBehaviour
 
     private void Update()
     {
+
+        LookAtPlayer();
+
         cooldownTimer += Time.deltaTime;
         if(PlayerInSight())
         {
+
             if(cooldownTimer >= attackCooldown)
             {
                 cooldownTimer =0;
@@ -66,5 +72,27 @@ public class MeleeEnemy : MonoBehaviour
     private void DamagePlayer()
     {
         if(PlayerInSight()) playerHealth.TakeDamage(damage);
+    }
+
+    public bool isFlipped = false;
+
+    public void LookAtPlayer()
+    {
+        Vector3 flipped = transform.localScale;
+        flipped.z *= -1f;
+
+        if (transform.position.x > player.position.x && isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = false;
+        }
+        else if (transform.position.x < player.position.x && !isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
+        }
+
     }
 }

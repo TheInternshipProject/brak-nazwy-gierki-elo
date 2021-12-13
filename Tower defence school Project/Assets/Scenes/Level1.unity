@@ -304,7 +304,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -5665,6 +5665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e93d35844172c4f9322b15abf82f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Umieranie: {fileID: 8300000, guid: 33326ac0b037d464692a4d5244a8b1d9, type: 3}
   MainMenuMusic: {fileID: 8300000, guid: 779abbb850123df4fbba6812bf2b0396, type: 3}
 --- !u!1 &1188111699
 GameObject:
@@ -13853,7 +13854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055916181}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.51, y: -1.5, z: -1.2852733}
+  m_LocalPosition: {x: 37.522, y: -1.493, z: -1.2852733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1653340066}
@@ -13910,7 +13911,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0041042566, y: -0.091058135}
+  m_Offset: {x: -0.041932583, y: -0.09658271}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13921,7 +13922,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.42217517, y: 0.81075335}
+  m_Size: {x: 0.51424885, y: 0.8218025}
   m_EdgeRadius: 0
 --- !u!114 &2055916187
 MonoBehaviour:
@@ -13945,6 +13946,8 @@ MonoBehaviour:
     m_Bits: 256
   Sword: {fileID: 1653340060}
   AttackPoint: {fileID: 783526271}
+  player: {fileID: 2118860}
+  isFlipped: 0
 --- !u!1 &2060232267
 GameObject:
   m_ObjectHideFlags: 3

@@ -10,7 +10,6 @@ public class Attack : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            Debug.Log("ELO");
             collision.GetComponent<Health>().TakeDamage(damage);
         }
     }

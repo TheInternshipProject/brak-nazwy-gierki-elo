@@ -10,6 +10,11 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] private GameObject Sword;
     [SerializeField] private GameObject[] fireballs;
     [SerializeField] private GameObject[] ForcePushes;
+
+
+    [SerializeField] private AudioClip fireball;
+    [SerializeField] private AudioClip ForcePush;
+    [SerializeField] private AudioClip melee;
     Dash dash;
 
     private Animator anim;
@@ -28,16 +33,19 @@ public class CharacterAttack : MonoBehaviour
     {
         if(Input.GetMouseButton(1) && cooldownTimer > attackCooldown )
         {
+            SoundManager.instance.PlaySound(fireball);
             FireballAtack();
         }
 
         if(Input.GetKeyDown(KeyCode.Q) && cooldownTimer > attackCooldown )
         {
+            SoundManager.instance.PlaySound(ForcePush);
             ForcePushAttack();
         }
 
         if(Input.GetMouseButton(0) && cooldownTimer > attackCooldown )
         {
+            SoundManager.instance.PlaySound(melee);
             MeleeSwordAttack();
         }
 

@@ -37,7 +37,7 @@ public class ProjectileForcePush : MonoBehaviour
         boxCollider.enabled = false;
         // anim.SetTrigger("explode");
 
-        if(collision.tag == "Enemy"){
+        if(collision.tag == "Enemy" && !collision.GetComponent<Health>().isPassive){
             gameObject.SetActive(false);
             Vector3 temp;
             if (collision.transform.rotation.y <= 0)

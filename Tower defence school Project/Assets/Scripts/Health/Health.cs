@@ -10,9 +10,11 @@ public class Health : MonoBehaviour
     private bool dead =false;
     public static bool isPlayerDead = false;
     private float timer = 0;
-    public GameObject HitPoints;
- 
     private float timerMax = 5;
+
+    public bool isPassive;
+
+    public GameObject HitPoints;
 
     private Animator anim;
 
@@ -26,15 +28,14 @@ public class Health : MonoBehaviour
     }
 
     private void Start(){
-       if(getObjectTag() == "Enemy")  healthBar.SetHealth(currentHealth  , startingHealth);
+       if(getObjectTag() == "Enemy" || getObjectTag() == "PassiveEnemy")  healthBar.SetHealth(currentHealth  , startingHealth);
     }
 
     public void TakeDamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage , 0 , startingHealth);
-        //DamagePopup.Create(gameObject.transform.position ,(int)_damage , true);
 
-        if (getObjectTag() == "Enemy")
+        if (getObjectTag() == "Enemy" || getObjectTag() == "PassiveEnemy")
         {
             healthBar.SetHealth(currentHealth, startingHealth);
             GameObject points = Instantiate(HitPoints, transform.position, Quaternion.identity);
@@ -55,7 +56,7 @@ public class Health : MonoBehaviour
         }
         else 
         {
-            if(!dead && getObjectTag() != "Enemy")
+            if(!dead && getObjectTag() != "Enemy" && getObjectTag() != "PassiveEnemy")
             {
                 anim.SetTrigger("die");
                 GameObject.Find("Player").GetComponent<CharacterController>().enabled = false;
@@ -70,7 +71,7 @@ public class Health : MonoBehaviour
                 GameObject.Find("Player").GetComponent<CharacterAttack>().enabled = false;
                 GameObject.Find("Player").GetComponent<Dash>().enabled = false;
             }
-            else if(getObjectTag() == "Enemy"){
+            else if(getObjectTag() == "Enemy" || getObjectTag() == "PassiveEnemy"){
                 anim.SetTrigger("die");
                 // GameObject.Find("EnemyBot").GetComponent<MeleeEnemy>().enabled = false;
                 dead =true;
@@ -84,7 +85,7 @@ public class Health : MonoBehaviour
         if(dead && getObjectTag() == "Enemy")
             if(Delay(0.7f))
                  Destroy(gameObject);
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.H))
             TakeDamage(1);
     }
 

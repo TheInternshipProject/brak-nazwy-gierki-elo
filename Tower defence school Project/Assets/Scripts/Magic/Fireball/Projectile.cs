@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     private bool hit;
     private float lifetime;
     private float timer = 0;
+
+    public static bool fireballSound = false;
  
     private float timerMax = 5;
 
@@ -22,7 +24,12 @@ public class Projectile : MonoBehaviour
     }
 
     private void Update(){
-        if(hit) return;
+        if(hit){
+            fireballSound = false; 
+            return;
+        } 
+        fireballSound = true;
+        if(Delay(1f)) fireballSound = false; 
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed , 0 , 0);
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [Header("Visual Cue")]
-    [SerializeField] private GameObject visualCue;
+    [SerializeField] public GameObject visualCue;
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;

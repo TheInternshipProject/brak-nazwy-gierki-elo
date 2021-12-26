@@ -13,6 +13,8 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private GameObject Sword;
     [SerializeField] private Transform AttackPoint;
 
+    [SerializeField] private AudioClip meleeSound;
+
     [SerializeField] private Transform player;
     private float cooldownTimer = Mathf.Infinity;
 
@@ -45,6 +47,7 @@ public class MeleeEnemy : MonoBehaviour
 
     private void MeleeSwordAttack()
     {
+        SoundManager.instance.PlaySound(meleeSound);
         cooldownTimer = 0;
         Sword.transform.position = AttackPoint.position;
         Sword.GetComponent<MeleeAtackEnemy>().SetDirection(Mathf.Sign(transform.localScale.x));

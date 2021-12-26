@@ -197,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 10
   healthBar: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a8a199eea2df6a340bb1e2d2c7d94c2c, type: 3}
   isPassive: 0
   HitPoints: {fileID: 509813706}
   PlayerDeadMenu: {fileID: 929821474}
@@ -1518,6 +1519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 1000
   healthBar: {fileID: 1698419443}
+  deathSound: {fileID: 0}
   isPassive: 1
   HitPoints: {fileID: 509813706}
   PlayerDeadMenu: {fileID: 0}
@@ -3167,7 +3169,7 @@ Transform:
   - {fileID: 811336036}
   - {fileID: 1897610341}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &240541441
 GameObject:
@@ -3738,7 +3740,7 @@ Transform:
   - {fileID: 916015586}
   - {fileID: 839817441}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &423154790
 BoxCollider2D:
@@ -4475,7 +4477,7 @@ Transform:
   - {fileID: 2062381266}
   - {fileID: 680446073}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &541581342
 GameObject:
@@ -4990,7 +4992,7 @@ Transform:
   - {fileID: 544411215}
   - {fileID: 246314576}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &590363411
 GameObject:
@@ -7418,7 +7420,7 @@ RectTransform:
   m_Children:
   - {fileID: 521404871}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10015,7 +10017,7 @@ Transform:
   - {fileID: 1643168339}
   - {fileID: 2018739192}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1050748706
 GameObject:
@@ -10489,67 +10491,8 @@ Transform:
   - {fileID: 202768339}
   - {fileID: 1205090772}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1168549190
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1168549192}
-  - component: {fileID: 1168549191}
-  - component: {fileID: 1168549193}
-  m_Layer: 0
-  m_Name: Music
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1168549191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168549190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd38378a00fb1fd4fa80723d1da232b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1168549192
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168549190}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 555.4, y: 287, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1168549193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168549190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6e93d35844172c4f9322b15abf82f4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Umieranie: {fileID: 8300000, guid: 5b7a5a91ba6c41c4ea3716fddb0449e5, type: 3}
-  MainMenuMusic: {fileID: 8300000, guid: 779abbb850123df4fbba6812bf2b0396, type: 3}
-  fireball: {fileID: 8300000, guid: f0abb76612d242c4891865b1feffebc0, type: 3}
 --- !u!1 &1188111699
 GameObject:
   m_ObjectHideFlags: 0
@@ -12125,7 +12068,7 @@ Transform:
   - {fileID: 568200705}
   - {fileID: 868469570}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339434857
 GameObject:
@@ -13852,7 +13795,7 @@ Transform:
   m_Children:
   - {fileID: 281138046}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1735822850
 GameObject:
@@ -13999,7 +13942,7 @@ Transform:
   - {fileID: 801934926}
   - {fileID: 45658206}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1762116711
 PrefabInstance:
@@ -22295,7 +22238,7 @@ Transform:
   - {fileID: 747828362}
   - {fileID: 131920117}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1950533753
 GameObject:
@@ -22423,7 +22366,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1950533756
 MonoBehaviour:
@@ -22735,7 +22678,7 @@ Transform:
   m_Children:
   - {fileID: 1929429664}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2018739191
 GameObject:
@@ -23410,6 +23353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   healthBar: {fileID: 926940184}
+  deathSound: {fileID: 0}
   isPassive: 0
   HitPoints: {fileID: 509813706}
   PlayerDeadMenu: {fileID: 0}
@@ -23461,6 +23405,7 @@ MonoBehaviour:
     m_Bits: 256
   Sword: {fileID: 1653340060}
   AttackPoint: {fileID: 783526271}
+  meleeSound: {fileID: 8300000, guid: b77f2c0b4bdff644bb7a0366535b7c01, type: 3}
   player: {fileID: 2118860}
   isFlipped: 0
 --- !u!1 &2060232267

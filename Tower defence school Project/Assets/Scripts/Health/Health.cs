@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     private float timer = 0;
     private float timerMax = 5;
 
+    [SerializeField] private AudioClip deathSound;
+
     public bool isPassive;
 
     public GameObject HitPoints;
@@ -58,6 +60,7 @@ public class Health : MonoBehaviour
         {
             if(!dead && getObjectTag() != "Enemy" && getObjectTag() != "PassiveEnemy")
             {
+                SoundManager.instance.PlaySound(deathSound);
                 anim.SetTrigger("die");
                 GameObject.Find("Player").GetComponent<CharacterController>().enabled = false;
                 dead = true;
@@ -66,6 +69,7 @@ public class Health : MonoBehaviour
                 Time.timeScale = 0.6f;
                 PlayerDeadMenu.SetActive(true);
 
+                GameObject.Find("EnemyBot").GetComponent<MeleeEnemy>().enabled = false;
                 GameObject.Find("UiCanvas").GetComponent<PauseMenu>().enabled = false;
 
                 GameObject.Find("Player").GetComponent<CharacterAttack>().enabled = false;

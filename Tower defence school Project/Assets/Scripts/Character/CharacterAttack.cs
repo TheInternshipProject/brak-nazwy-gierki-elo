@@ -33,19 +33,16 @@ public class CharacterAttack : MonoBehaviour
     {
         if(Input.GetMouseButton(1) && cooldownTimer > attackCooldown )
         {
-            SoundManager.instance.PlaySound(fireball);
             FireballAtack();
         }
 
         if(Input.GetKeyDown(KeyCode.Q) && cooldownTimer > attackCooldown )
         {
-            SoundManager.instance.PlaySound(ForcePush);
             ForcePushAttack();
         }
 
         if(Input.GetMouseButton(0) && cooldownTimer > attackCooldown )
         {
-            SoundManager.instance.PlaySound(melee);
             MeleeSwordAttack();
         }
 
@@ -54,7 +51,8 @@ public class CharacterAttack : MonoBehaviour
 
     private void MeleeSwordAttack()
     {
-         anim.SetTrigger("attack");
+        SoundManager.instance.PlaySound(melee);
+        anim.SetTrigger("attack");
         cooldownTimer = 0;
         Sword.transform.position = AttackPoint.position;
         Sword.GetComponent<MeleeAttack>().SetDirection(Mathf.Sign(transform.localScale.x));
@@ -62,7 +60,8 @@ public class CharacterAttack : MonoBehaviour
 
     private void FireballAtack() 
     {
-        anim.SetTrigger("attack");
+        SoundManager.instance.PlaySound(fireball);
+        anim.SetTrigger("attack");   
         cooldownTimer = 0;
 
         fireballs[FindFireball()].transform.position = FirePoint.position;
@@ -71,6 +70,7 @@ public class CharacterAttack : MonoBehaviour
 
     private void ForcePushAttack() 
     {
+        SoundManager.instance.PlaySound(ForcePush);
         anim.SetTrigger("attack");
         cooldownTimer = 0;
 

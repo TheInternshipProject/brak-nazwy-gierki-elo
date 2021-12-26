@@ -5,7 +5,6 @@ using UnityEngine;
 public class Dash : MonoBehaviour
 {
     [SerializeField] private ParticleSystem dash;
-    [SerializeField] private Stamina stamina;
      // how fast you want to dash
     public float dashSpeed;
     // how long you want to dash for
@@ -16,16 +15,44 @@ public class Dash : MonoBehaviour
     public float resetDashCooldown;
 
 
+    //Stamina
+
+    [Range(0, 4000)]
+    public int stamina;
+    public int maxStamina = 2000;
+    public RectTransform uiBar;
+
+    float percentUnit;
+    float staminaPercentUnit;
+    float DashcoolDown;
+    float currentStaminaPercent;
+
+     private void Start()
+    {
+        percentUnit = 1f / uiBar.anchorMax.x;
+        staminaPercentUnit = 100f / maxStamina;
+    }
+
+
     public void Update()
     {
+        
         // starts the dash cooldown timer
         dashCooldown -= Time.deltaTime;
         // stops the timer once the cooldown is ready
         if (dashCooldown < 0) {
             dashCooldown = -1;
+            stamina +=200;
         } else {
+            stamina += 5;
+            currentStaminaPercent = stamina * staminaPercentUnit;
+        uiBar.anchorMax = new Vector2(currentStaminaPercent * percentUnit / 100f ,  uiBar.anchorMax.y);
             dashCooldown -= Time.deltaTime;
         }
+    if (stamina > maxStamina) stamina = maxStamina;
+        else if (stamina < 0) stamina = 0;
+        
+        
 
    //You can change KeyCode to whatever you like. currently on the NUMPAD 0 "zero" button
         if (Input.GetKey(KeyCode.LeftShift)|| Input.GetKey(KeyCode.RightShift))
@@ -53,8 +80,9 @@ public class Dash : MonoBehaviour
             }
 
             dashCooldown = resetDashCooldown;
-            stamina.SetStaminaToZero();
-            stamina.SlowlyRecoverStamina(resetDashCooldown);
+            stamina = 45;
+            // stamina.SetStaminaToZero();
+            // stamina.SlowlyRecoverStamina(resetDashCooldown);
             yield return null;
         }
 
@@ -64,7 +92,5 @@ public class Dash : MonoBehaviour
     {
         dash.Play();
     }
-
-    
 
 }

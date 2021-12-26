@@ -27,14 +27,17 @@ public class Stamina : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (isRecoverNeeded)
+        if (stamina < maxStamina)
         {
-            StartCoroutine("DoCheck");
-            isRecoverNeeded = false;
+            if(Delay(DashcoolDown))
+            {
+                stamina += 300;
+            }
+            
         }
-
+        
         if (stamina > maxStamina) stamina = maxStamina;
         else if (stamina < 0) stamina = 0;
 
@@ -42,6 +45,10 @@ public class Stamina : MonoBehaviour
 
         uiBar.anchorMax = new Vector2(currentStaminaPercent * percentUnit / 100f ,  uiBar.anchorMax.y);
 
+    }
+
+    private bool checkIfStaminaIsFull(){
+        return stamina == maxStamina ? true : false;
     }
 
     public void SetStaminaToZero()
@@ -61,17 +68,18 @@ public class Stamina : MonoBehaviour
         else if (stamina < 0) stamina = 0;
     }
 
-    public void Delay(float seconds)
+    public bool Delay(float seconds)
     {
         float howMuchStaminaForSecond = maxStamina / seconds;
         timerMax = seconds;
 
         timer += Time.deltaTime;
 
-        if (timer <= timerMax)
+        if (timer >= timerMax)
         {
-            stamina += 300;
+            return true;
         }
+        else return false;
     }
 
     IEnumerator DoCheck()
@@ -79,7 +87,7 @@ public class Stamina : MonoBehaviour
         for (int i=0; i< DashcoolDown; i++)
         {
             stamina += 300;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(5);
         }
     }
 

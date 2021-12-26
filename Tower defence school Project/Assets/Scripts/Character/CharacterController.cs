@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-
-   [SerializeField] private float speed;
+    [SerializeField] private ParticleSystem dust;
+    [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
@@ -33,9 +33,16 @@ public class CharacterController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
 
         if (horizontalInput > 0.01f)
+        {
             transform.localScale = new Vector3(1, 1, 1);
+           // createDust();
+        }   
         else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-1, 1, 1);
+        {
+             transform.localScale = new Vector3(-1, 1, 1);
+            // createDust();
+        }
+           
 
         //Set animator parameters
         anim.SetBool("run", horizontalInput != 0);
@@ -48,7 +55,11 @@ public class CharacterController : MonoBehaviour
             body.gravityScale = 7;
 
             if (Input.GetKey(KeyCode.Space))
+            {
+                createDust();
                 Jump();
+            }
+                
         }
         else
             wallJumpCooldown += Time.deltaTime;
@@ -93,5 +104,10 @@ public class CharacterController : MonoBehaviour
     public bool canAttack()
     {
         return horizontalInput == 0 && isGrounded();
+    }
+
+    void createDust()
+    {
+        dust.Play();
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Dash : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem dash;
     [SerializeField] private Stamina stamina;
      // how fast you want to dash
     public float dashSpeed;
@@ -30,6 +31,7 @@ public class Dash : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift)|| Input.GetKey(KeyCode.RightShift))
         {
             if (dashCooldown <= 0) {
+                createDashParticle();
                 StartCoroutine(DashPower());
     }
         }
@@ -57,5 +59,12 @@ public class Dash : MonoBehaviour
         }
 
     }
+
+    void createDashParticle()
+    {
+        dash.Play();
+    }
+
+    
 
 }

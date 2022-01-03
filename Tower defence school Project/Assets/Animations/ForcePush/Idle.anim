@@ -21,11 +21,11 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 6816435267073330910, guid: 68479412fc2aea040951519461c2a053, type: 3}
-    - time: 0.13333334
+    - time: 0.083333336
       value: {fileID: -8455565618211954174, guid: 68479412fc2aea040951519461c2a053, type: 3}
-    - time: 0.21666667
+    - time: 0.16666667
       value: {fileID: 3586107338741089408, guid: 68479412fc2aea040951519461c2a053, type: 3}
-    - time: 0.35
+    - time: 0.25
       value: {fileID: -2271916887886556652, guid: 68479412fc2aea040951519461c2a053, type: 3}
     attribute: m_Sprite
     path: 
@@ -55,7 +55,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.36666667
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -75,7 +75,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.35
+  - time: 0.33333334
     functionName: stage2Animation
     data: 
     objectReferenceParameter: {fileID: 0}

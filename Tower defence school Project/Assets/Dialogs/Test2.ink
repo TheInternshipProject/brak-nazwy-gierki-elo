@@ -1,15 +1,15 @@
 -> main
 
 === main ===
-Która wódka najlepsza ?
+Ktora wodka najlepsza ?
     +[Sztumbras]
         -> chosen("Sztumbrasa")
-    +[Żubrówka]
-        -> chosen("Żubrówke")
+    +[Zubrowka]
+        -> chosen("Zubrowke")
     +[Stock]
         -> chosen("Stocka")
 
 === chosen(wodka) ===
-Wybrałeś {wodka} Gratulacje !
+Wybrales {wodka} Gratulacje !
 ->END
     

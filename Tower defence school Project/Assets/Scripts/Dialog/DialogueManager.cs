@@ -69,6 +69,7 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        Cursor.visible = true;
 
         ContinueStory();
     }
@@ -79,6 +80,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        Cursor.visible = false;
         dialogueText.text = "";
     }
 

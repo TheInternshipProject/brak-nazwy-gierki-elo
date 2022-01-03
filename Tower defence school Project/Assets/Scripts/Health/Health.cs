@@ -68,12 +68,15 @@ public class Health : MonoBehaviour
 
                 Time.timeScale = 0.6f;
                 PlayerDeadMenu.SetActive(true);
+                Cursor.visible = true;
+
 
                 GameObject.Find("EnemyBot").GetComponent<MeleeEnemy>().enabled = false;
                 GameObject.Find("UiCanvas").GetComponent<PauseMenu>().enabled = false;
 
                 GameObject.Find("Player").GetComponent<CharacterAttack>().enabled = false;
                 GameObject.Find("Player").GetComponent<Dash>().enabled = false;
+
             }
             else if(getObjectTag() == "Enemy" || getObjectTag() == "PassiveEnemy"){
                 anim.SetTrigger("die");

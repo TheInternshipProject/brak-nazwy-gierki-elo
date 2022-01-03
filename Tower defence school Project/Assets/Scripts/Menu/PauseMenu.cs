@@ -36,6 +36,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
         GameObject.Find("Player").GetComponent<CharacterAttack>().enabled = true;
         GameObject.Find("Player").GetComponent<Dash>().enabled = true;
+        Cursor.visible = false;
     }
 
     void Pause()
@@ -46,6 +47,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
         GameObject.Find("Player").GetComponent<CharacterAttack>().enabled = false;
         GameObject.Find("Player").GetComponent<Dash>().enabled = false;
+        Cursor.visible = true;
     }
 
     public void MainMenu()

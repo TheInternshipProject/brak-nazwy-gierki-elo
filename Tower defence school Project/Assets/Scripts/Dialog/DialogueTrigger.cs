@@ -11,7 +11,6 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private TextAsset inkJSON;
 
     private bool playerInRange;
-
     private void Awake() 
     {
         playerInRange = false;
@@ -32,6 +31,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             visualCue.SetActive(false);
         }
+            
     }
 
     private void OnTriggerEnter2D(Collider2D collider) 
